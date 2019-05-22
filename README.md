@@ -29,6 +29,14 @@ To run the test suite run:
 rspec
 ```
 
+## Unit Test Watcher
+
+If you would like to have tests auto run while working on code run the following:
+
+```shell
+guard
+```
+
 ## Contributors
 
 - Dalton Moehnke
