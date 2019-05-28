@@ -41,4 +41,5 @@ guard
 
 - Dalton Moehnke
 - Gabor Konczol
-- [Coder Swartz](https://github.com/ctsstc)
+- [Coder Swartz 🍊](https://github.com/ctsstc)
+- [Andrew Bell](https://github.com/abell95)
