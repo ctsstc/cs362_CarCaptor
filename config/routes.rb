@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/' => 'rootcontroller#index'
   resources :ownedcars
   resources :garages
   resources :users
