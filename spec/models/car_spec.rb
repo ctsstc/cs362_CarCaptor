@@ -26,56 +26,10 @@ RSpec.describe Car, type: :model do
       expect(car1.does_opponent_win_simple_drag_race?(car2)).to be false
     end
 
-    it "expects setup to alter default parameters of an already defaulted car" do
-      car.setup(year: 1999, 
-        make: "Ford", 
-        model: "Explorer", 
-        coolness_value: 1, 
-        horsepower: 160,
-        torque: 225,
-        weight: 3891 )
-      expect(car.year).to eq(1999)
-      expect(car.make).to eq("Ford")
-      expect(car.model).to eq("Explorer")
-      expect(car.coolness_value).to eq(1)
-      expect(car.horsepower).to eq(160)
-      expect(car.torque).to eq(225)
-      expect(car.weight).to eq(3891)
-    end
-
     it "can calculate power to weight ratios for itself" do
-      car.setup(year: 1999, 
-        make: "Ford", 
-        model: "Explorer", 
-        coolness_value: 1, 
-        horsepower: 160,
-        torque: 225,
-        weight: 3891 )
-      pwr_expected = 160.fdiv(3891)
+      horsepower = car.horsepower
+      weight = car.weight
+      pwr_expected = horsepower.fdiv(weight)
       expect(car.calculate_power_to_weight_ratio).to eq(pwr_expected)
-    end
-
-    # it "can perform a big dependency" do
-    #   car_for_dep = FactoryBot.create(:car, year: 1997, make: "Ford", model: "Thing", coolness_value: 9, horsepower: 2000, torque: 2000, weight: 5000)
-    #   expect(car_for_dep.perform(BigDependency.new)).to eq(1)
-    # end
-
-    it "can perform a big dependency fake" do
-      car_for_dep = FactoryBot.create(:car, year: 1997, make: "Ford", model: "Thing", coolness_value: 9, horsepower: 2000, torque: 2000, weight: 5000)
-      expect(car_for_dep.perform(TestBigDependency.new)).to eq(1)
-    end
-
-    it "can perform a big dependency stub" do
-      car_for_dep = FactoryBot.create(:car, year: 1997, make: "Ford", model: "Thing", coolness_value: 9, horsepower: 2000, torque: 2000, weight: 5000)
-      dep_stub = BigDependency.new
-      allow(dep_stub).to receive(:execute).and_return(1)
-      expect(car_for_dep.perform(dep_stub)).to eq(1)
-    end
-
-    it "can perform a big dependency mock" do
-      car_for_dep = FactoryBot.create(:car, year: 1997, make: "Ford", model: "Thing", coolness_value: 9, horsepower: 2000, torque: 2000, weight: 5000)
-      dep_mock = BigDependency.new
-      expect(dep_mock).to receive(:execute).and_return(1)
-      expect(car_for_dep.perform(dep_mock)).to eq(1)
     end
 end
