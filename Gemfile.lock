@@ -261,6 +261,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   puma (~> 3.11)
   rails (~> 5.2.3)
+  rake
   rspec-rails (~> 3.7.0)
   sass-rails (~> 5.0)
   selenium-webdriver
