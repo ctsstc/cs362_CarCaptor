@@ -1,6 +1,8 @@
 # Car Captor
 
-[![Build Status](https://travis-ci.org/ctsstc/Car-Captor.svg?branch=develop)](https://travis-ci.org/ctsstc/Car-Captor)
+| Travis CI | CC Grade | CC Test Coverage |
+|---|---|---|
+| [![Build Status](https://travis-ci.org/ctsstc/Car-Captor.svg?branch=develop)](https://travis-ci.org/ctsstc/Car-Captor) | [![Maintainability](https://api.codeclimate.com/v1/badges/a8ff100e58731888f6e2/maintainability)](https://codeclimate.com/github/ctsstc/Car-Captor/maintainability) | [![Test Coverage](https://api.codeclimate.com/v1/badges/a8ff100e58731888f6e2/test_coverage)](https://codeclimate.com/github/ctsstc/Car-Captor/test_coverage) |
 
 ## What?!
 
@@ -9,8 +11,8 @@ Build your very own garage and collect all the rarest cars! only he who controls
 ## Installation
 
 1. Clone the repo into the directory of your choosing
-1. Make sure you're using the proper Ruby version defined in `.ruby-version`
-1. Run `bundle`
+2. Make sure you're using the proper Ruby version defined in `.ruby-version`
+3. Run `bundle`
    - If you do not have bundle on your Ruby install yet make sure to run `gem install bundler`
 
 ## Running the Server
