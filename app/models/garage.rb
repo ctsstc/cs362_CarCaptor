@@ -9,12 +9,16 @@ class Garage < ApplicationRecord
   end
 
   def add(car = Car.new)
-    return false unless cars.length < capacity
+    return false if full?
 
     cars << car
   end
 
   def lame?
     cars.empty?
+  end
+
+  def full?
+    cars.length == capacity
   end
 end

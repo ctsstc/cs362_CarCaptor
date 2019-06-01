@@ -33,6 +33,10 @@ RSpec.describe Garage, type: :model do
     it 'increases car amount by 1' do
       expect { subject.add }.to change { subject.cars.length }.by(1)
     end
+
+    it 'is not full' do
+      expect(subject.full?).to eq(false)
+    end
   end
 
   describe 'a garage at full capacity' do
@@ -49,6 +53,10 @@ RSpec.describe Garage, type: :model do
 
     it 'does not increase the cars in the garage' do
       expect { subject.add(another_car) }.not_to change { subject.cars.length }
+    end
+
+    it 'is full' do
+      expect(subject.full?).to eq(true)
     end
   end
 end
