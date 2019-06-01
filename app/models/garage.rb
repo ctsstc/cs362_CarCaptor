@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Garage < ApplicationRecord
   belongs_to :user
   has_many :cars

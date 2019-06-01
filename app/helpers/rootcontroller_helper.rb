@@ -1,2 +1,0 @@
-module RootcontrollerHelper
-end
