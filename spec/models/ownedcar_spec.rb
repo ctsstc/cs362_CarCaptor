@@ -3,18 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe Ownedcar, type: :model do
-  let(:ownedcar) { FactoryBot.build(:ownedcar, :civic) }
-  let(:ownedcar2) { FactoryBot.build(:ownedcar, :ae86) }
-
-  it 'expects a new car to have all its parameters' do
-    expect(civic.year).to eq(2001)
-    expect(civic.make).to eq('Honda')
-    expect(civic.model).to eq('Civic')
-    expect(civic.coolness_value).to eq(1)
-    expect(civic.horsepower).to eq(190)
-    expect(civic.torque).to eq(220)
-    expect(civic.weight).to eq(3690)
-  end
+  let(:user) { build(:user) }
+  let(:civic) { FactoryBot.build(:ownedcar, :civic, user: user) }
+  let(:ae86) { FactoryBot.build(:ownedcar, :ae86, user: user) }
+  let(:ford_explorer) { build(:ownedcar, :ford_explorer, user: user) }
 
   it 'can calculate power to weight ratio' do
     pwr_expected = 190.fdiv(3690)
@@ -22,39 +14,11 @@ RSpec.describe Ownedcar, type: :model do
   end
 
   it 'expects a car with higher ptwr to win' do
-    expect(civic.does_opponent_win_simple_drag_race?(ownedcar2)).to be true
-    expect(ownedcar2.does_opponent_win_simple_drag_race?(ownedcar)).to be false
+    expect(civic.does_opponent_win_simple_drag_race?(ae86)).to be true
   end
 
-  it 'expects setup to alter default parameters of an already defaulted car' do
-    civic.setup(
-      year: 1999,
-      make: 'Ford',
-      model: 'Explorer',
-      coolness_value: 1,
-      horsepower: 160,
-      torque: 225,
-      weight: 3891
-    )
-    expect(civic.year).to eq(1999)
-    expect(civic.make).to eq('Ford')
-    expect(civic.model).to eq('Explorer')
-    expect(civic.coolness_value).to eq(1)
-    expect(civic.horsepower).to eq(160)
-    expect(civic.torque).to eq(225)
-    expect(civic.weight).to eq(3891)
-  end
-
-  it 'can print out the values we want the user to see' do
-    civic.setup(
-      year: 1999,
-      make: 'Ford',
-      model: 'Explorer',
-      coolness_value: 1,
-      horsepower: 160,
-      torque: 225,
-      weight: 3891
-    )
-    expect(civic.info).to eq('1999 Ford Explorer, hp 160, tq 225, weight 3891')
+  it 'displays car information' do
+    ford_info = '1999 Ford Explorer, hp 160, tq 225, weight 3891'
+    expect(ford_explorer.info).to eq(ford_info)
   end
 end

@@ -10,7 +10,6 @@ FactoryBot.define do
       horsepower { 190 }
       torque { 220 }
       weight { 3690 }
-      user { User.new }
     end
 
     trait :ae86 do
@@ -21,7 +20,16 @@ FactoryBot.define do
       horsepower { 190 }
       torque { 115 }
       weight { 2200 }
-      user { User.new }
+    end
+
+    trait :ford_explorer do
+      year { 1999 }
+      make {'Ford' }
+      model { 'Explorer' }
+      coolness_value { 1 }
+      horsepower { 160 }
+      torque { 225 }
+      weight { 3891 }
     end
   end
 end
