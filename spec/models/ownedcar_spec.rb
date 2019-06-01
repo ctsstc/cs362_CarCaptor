@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Ownedcar, type: :model do
-  let(:user) { build(:user) }
-  let(:civic) { FactoryBot.build(:ownedcar, :civic, user: user) }
-  let(:ae86) { FactoryBot.build(:ownedcar, :ae86, user: user) }
+  let!(:user) { build(:user) }
+  let(:civic) { build(:ownedcar, :civic, user: user) }
+  let(:ae86) { build(:ownedcar, :ae86, user: user) }
   let(:ford_explorer) { build(:ownedcar, :ford_explorer, user: user) }
 
   it 'can calculate power to weight ratio' do

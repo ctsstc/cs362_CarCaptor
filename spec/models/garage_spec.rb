@@ -3,36 +3,74 @@
 require 'rails_helper'
 
 RSpec.describe Garage, type: :model do
-  let!(:user) { create(:user) }
-  let(:garage) { create(:garage, user: user) }
+  let!(:user) { build(:user) }
+  let!(:car) { build(:car) }
+  subject { build(:garage, user: user) }
 
   describe 'empty garage' do
     it 'expects a new garage to have no cars' do
-      expect(garage.cars.length).to eq(0)
+      expect(subject.cars.length).to eq(0)
     end
 
     it 'expects a garage with no cars to be lame' do
-      expect(garage).to be_lame
+      expect(subject).to be_lame
     end
   end
 
   describe 'garage with a car' do
-    let(:car) { create(:car) }
-
     before do
-      garage.add(car)
+      subject.add(car)
     end
 
     it 'has 1 car' do
-      expect(garage.cars.length).to eq(1)
+      expect(subject.cars.length).to eq(1)
     end
 
     it 'is not lame' do
-      expect(garage).to_not be_lame
+      expect(subject).to_not be_lame
     end
 
     it 'increases car amount by 1' do
-      expect { garage.add }.to change { garage.cars.length }.by(1)
+      expect { subject.add }.to change { subject.cars.length }.by(1)
+    end
+
+    it 'is not full' do
+      expect(subject.full?).to eq(false)
     end
   end
+
+  describe 'a garage at full capacity' do
+    subject { build(:garage, capacity: 1) }
+    let(:another_car) { build(:car) }
+
+    before do
+      subject.add(car)
+    end
+
+    it 'returns false when trying to add a car to a full garage' do
+      expect(subject.add(another_car)).to eq(false)
+    end
+
+    it 'does not increase the cars in the garage' do
+      expect { subject.add(another_car) }.not_to change { subject.cars.length }
+    end
+
+    it 'is full' do
+      expect(subject.full?).to eq(true)
+    end
+  end
+
+  describe 'cars persist' do
+    subject { create(:garage, user: user) }
+    let(:car) { create(:car) }
+
+    before do
+      subject.add(car)
+    end
+
+    it 'still has a car after reloading' do
+      expect { subject.reload }.not_to change { subject.cars.count }
+    end
+  end
+
 end

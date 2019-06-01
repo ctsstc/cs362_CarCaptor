@@ -9,6 +9,8 @@ class Garage < ApplicationRecord
   end
 
   def add(car = Car.new)
+    return false if full?
+
     cars << car
   end
 
@@ -16,7 +18,7 @@ class Garage < ApplicationRecord
     cars.empty?
   end
 
-  def count_cars
-    cars.size
+  def full?
+    cars.length == capacity
   end
 end
