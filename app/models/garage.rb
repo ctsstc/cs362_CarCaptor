@@ -15,8 +15,4 @@ class Garage < ApplicationRecord
   def lame?
     cars.empty?
   end
-
-  def count_cars
-    cars.size
-  end
 end
