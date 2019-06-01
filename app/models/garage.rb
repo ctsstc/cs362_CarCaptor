@@ -9,6 +9,8 @@ class Garage < ApplicationRecord
   end
 
   def add(car = Car.new)
+    return false unless cars.length < capacity
+
     cars << car
   end
 
