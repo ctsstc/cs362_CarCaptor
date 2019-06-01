@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CarsController < ApplicationController
   def new
     @car = Car.new
@@ -9,14 +11,14 @@ class CarsController < ApplicationController
 
   def create
     car = Car.create(
-      year: params[:car][:year], 
-      make: params[:car][:make], 
-      model: params[:car][:model], 
-      coolness_value: params[:car][:coolness_value], 
-      horsepower: params[:car][:horsepower], 
-      torque: params[:car][:torque], 
+      year: params[:car][:year],
+      make: params[:car][:make],
+      model: params[:car][:model],
+      coolness_value: params[:car][:coolness_value],
+      horsepower: params[:car][:horsepower],
+      torque: params[:car][:torque],
       weight: params[:car][:weight]
-      )
+    )
     if car.save
       redirect_to cars_path
     else

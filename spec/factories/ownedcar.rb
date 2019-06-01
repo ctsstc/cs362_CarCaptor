@@ -24,7 +24,7 @@ FactoryBot.define do
 
     trait :ford_explorer do
       year { 1999 }
-      make {'Ford' }
+      make { 'Ford' }
       model { 'Explorer' }
       coolness_value { 1 }
       horsepower { 160 }

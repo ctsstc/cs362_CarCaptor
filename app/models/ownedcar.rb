@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Ownedcar < ApplicationRecord
   belongs_to :user
 
