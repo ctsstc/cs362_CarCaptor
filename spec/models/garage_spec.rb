@@ -59,4 +59,18 @@ RSpec.describe Garage, type: :model do
       expect(subject.full?).to eq(true)
     end
   end
+
+  describe 'cars persist' do
+    subject { create(:garage, user: user) }
+    let(:car) { create(:car) }
+
+    before do
+      subject.add(car)
+    end
+
+    it 'still has a car after reloading' do
+      expect { subject.reload }.not_to change { subject.cars.count }
+    end
+  end
+
 end
