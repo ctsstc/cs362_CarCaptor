@@ -1,5 +1,7 @@
 # Car Captor
 
+[![Build Status](https://travis-ci.org/ctsstc/Car-Captor.svg?branch=develop)](https://travis-ci.org/ctsstc/Car-Captor)
+
 ## What?!
 
 Build your very own garage and collect all the rarest cars! only he who controls the coolest car will be crowned DRIFT KING!
