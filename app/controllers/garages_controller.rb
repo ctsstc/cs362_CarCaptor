@@ -4,7 +4,7 @@ class GaragesController < ApplicationController
   def new
     @garage = Garage.new
   end
-  
+
   def index
     @garages = Garage.all
   end
