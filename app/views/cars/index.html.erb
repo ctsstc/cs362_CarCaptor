@@ -9,6 +9,7 @@
       <td>Horsepower</td>
       <td>Torque</td>
       <td>Weight</td>
+      <td>View Car</td>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,7 @@
         <td class="horsepower"><%= car.horsepower %></td>
         <td class="torque"><%= car.torque %></td>
         <td class="weight"><%= car.weight %></td>
+        <td><%= link_to "#{car.year} #{car.make} #{car.model}", car %></td>
       </tr>
     <% end %>
   </tbody>
