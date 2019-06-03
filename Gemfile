@@ -61,6 +61,7 @@ group :test do
   gem 'chromedriver-helper', '1.2.0'
   gem 'rake'
   gem 'simplecov', require: false
+  gem 'simplecov-console'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
