@@ -1,0 +1,8 @@
+<h1>New Garage</h1>
+
+<%= form_for(@garage) do |f| %>
+  <%= f.label(:capacity) %>
+  <%= f.number_field(:capacity) %>
+  <br />
+  <%= f.submit %>
+<% end %>
