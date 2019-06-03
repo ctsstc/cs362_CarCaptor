@@ -17,5 +17,5 @@ exclude_patterns:
   - "**/*_test.go"
   - "**/*.d.ts"
   - "Gemfile"
-  - "Gimefile.lock"
+  - "Gemfile.lock"
   - "bin/"
