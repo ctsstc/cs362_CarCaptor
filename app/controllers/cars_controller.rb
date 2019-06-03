@@ -5,6 +5,10 @@ class CarsController < ApplicationController
     @car = Car.new
   end
 
+  def show
+    @car = Car.find(params[:id])
+  end
+
   def index
     @cars = Car.all
   end
