@@ -45,7 +45,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'rspec-rails', '~> 3.7.0'
   gem 'simplecov', require: false
-  gem 'simplecov-console'
+  gem 'simplecov-console', require: false
 end
 
 group :development do
