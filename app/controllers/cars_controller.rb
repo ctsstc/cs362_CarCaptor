@@ -14,16 +14,17 @@ class CarsController < ApplicationController
   end
 
   def create
-    car = Car.create(
+    @car = Car.create(
       year: params[:car][:year],
       make: params[:car][:make],
       model: params[:car][:model],
       coolness_value: params[:car][:coolness_value],
       horsepower: params[:car][:horsepower],
       torque: params[:car][:torque],
-      weight: params[:car][:weight]
+      weight: params[:car][:weight],
+      photo_url: params[:car][:photo_url]
     )
-    if car.save
+    if @car.save
       redirect_to cars_path
     else
       render :new
