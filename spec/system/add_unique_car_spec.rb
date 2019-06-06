@@ -3,6 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe 'adding a unique car', type: :system do
+  let!(:photo_url) { 'http://insecure.photo/test-photo.jpg' }
+
   it 'allows a car to be added to a new user' do
     visit new_car_path
     fill_in 'Year', with: '1999'
@@ -12,6 +14,7 @@ RSpec.describe 'adding a unique car', type: :system do
     fill_in 'Horsepower', with: 260
     fill_in 'Torque', with: 302
     fill_in 'Weight', with: 3273
+    fill_in 'Photo url', with: photo_url
     click_on('Create Car')
     visit new_user_path
     fill_in 'Username', with: 'Dalton'
