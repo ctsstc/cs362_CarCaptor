@@ -2,6 +2,7 @@
 <table>
   <thead>
     <tr>
+      <td>Photo</td>
       <td>Year</td>
       <td>Make</td>
       <td>Model</td>
@@ -15,6 +16,7 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr class="car-row" id="<%= dom_id(car) %>">
+        <td class="photo"><img src="<%= car.photo_url %>" style="max-width: 40px; max-height: 40px;"></td>
         <td class="year"><%= car.year %></td>
         <td class="make"><%= car.make %></td>
         <td class="model"><%= car.model %></td>
