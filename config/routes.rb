@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'users/:id/add' => 'users#add'
   get 'garages/:id/add' => 'garages#add'
+  get '/challenge' => 'users#challenge'
 end

@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def challenge
+    @users = User.all
+  end
+
   def add
     @cars = Car.all
     @ownedcar = Ownedcar.new

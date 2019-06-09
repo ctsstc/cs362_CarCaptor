@@ -1,0 +1,14 @@
+<h1>Challenge A User</h1>
+Crush their ego utterly.
+<br><br>
+<select class="first-select">
+  <% @users.each do |user| %>
+    <option class="username"><%= user.username %></option>
+  <% end %>
+</select>
+VS
+<select class="second-select">
+  <% @users.each do |user| %>
+    <option class="username"><%= user.username %></option>
+  <% end %>
+</select>
