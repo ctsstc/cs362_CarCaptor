@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get '/' => 'rootcontroller#index'
+  root to: 'rootcontroller#index'
   resources :ownedcars
   resources :garages
   resources :users
