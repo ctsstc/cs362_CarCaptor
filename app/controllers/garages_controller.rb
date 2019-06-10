@@ -24,6 +24,6 @@ class GaragesController < ApplicationController
   private
 
   def set_user
-    @user = User.new
+    @user = current_user
   end
 end
