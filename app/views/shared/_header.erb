@@ -7,7 +7,7 @@
   
   <ul class='account'>
     <% if user_signed_in? %>
-      <li class="authenticated">Hello <%= current_user.username %></li>
+      <li class="authenticated">Hello <%= link_to(current_user.username, user_path) %></li>
       <li class="logout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
     <% else %>
       <li class="sign-in"><%= link_to('Login', new_user_session_path) %></li>
