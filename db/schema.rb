@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_184245) do
+ActiveRecord::Schema.define(version: 2019_06_09_235351) do
 
   create_table "cars", force: :cascade do |t|
     t.integer "year"
@@ -53,11 +53,17 @@ ActiveRecord::Schema.define(version: 2019_06_03_184245) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
-    t.string "email"
+    t.string "email", default: "", null: false
     t.integer "garage_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["garage_id"], name: "index_users_on_garage_id"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
