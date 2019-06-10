@@ -23,6 +23,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def commence_challenge
+    @user_one = User.find(params[:first])
+    @user_two = User.find(params[:second])
+  end
+
   def create
     user = User.create(
       username: params[:user][:username],

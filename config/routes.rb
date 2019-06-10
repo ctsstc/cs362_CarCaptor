@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'users/:id/add' => 'users#add'
   get 'garages/:id/add' => 'garages#add'
   get '/challenge' => 'users#challenge'
+  post '/challenge' => 'users#commence_challenge'
 end
