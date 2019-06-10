@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class ProfileController < ApplicationController
-  before_action :authenticate_user!, only: [:profile]
+  before_action :authenticate_user!, only: [:index, :add_car]
 
-  def index; end
+  def index
+    @owned_cars = current_user.ownedcars
+  end
 
   def show; end
 
