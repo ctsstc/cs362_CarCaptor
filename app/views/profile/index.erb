@@ -1,0 +1,18 @@
+<h1><%= current_user.username %>'s Garage</h1>
+email: <%= current_user.email %>
+<br />
+garage capacity: <%= current_user.garage.capacity %>
+<br />
+
+<%= link_to 'Add a new car!', profile_add_car_url %>
+
+<h2>Cars:</h2>
+<table>
+  <tbody>
+    <% Ownedcar.where(:user => current_user.id).each do |c| %>
+      <tr class="ownedcar-row" id="<%= dom_id(c) %>">
+        <td><%= c.info %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
