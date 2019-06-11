@@ -11,7 +11,7 @@
   <tbody>
     <% @ownedcars.each do |c| %>
       <tr class="ownedcar-row" id="<%= dom_id(c) %>">
-        <td class="owner"><%= c.user %></td>
+        <td class="owner"><%= c.user.username %></td>
         <td class="year"><%= c.year %></td>
         <td class="make"><%= c.make %></td>
         <td class="model"><%= c.model %></td>
