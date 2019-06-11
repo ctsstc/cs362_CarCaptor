@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :cars
   get '/profile', to: 'profile#index'
   get '/profile/add-car'
+  get '/profile/challenge'
+  post '/profile/commence_challenge'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
