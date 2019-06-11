@@ -8,6 +8,8 @@
 
 Build your very own garage and collect all the rarest cars! only he who controls the coolest car will be crowned DRIFT KING!
 
+<https://car-captor.herokuapp.com/>
+
 ## Installation
 
 1. Clone the repo into the directory of your choosing
