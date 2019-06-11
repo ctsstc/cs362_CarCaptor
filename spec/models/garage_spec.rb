@@ -87,9 +87,8 @@ RSpec.describe Garage, type: :model do
 
     it 'updates total coolness when a car\'s coolness increases' do
       expect do
-        car.update_attributes(coolness_value: 4)
+        car.update(coolness_value: 4)
       end.to change { subject.total_coolness }.by(3)
     end
   end
-
 end
