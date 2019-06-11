@@ -11,6 +11,11 @@ class OwnedcarsController < ApplicationController
     @ownedcars = Ownedcar.all
   end
 
+  def show
+    @car = Ownedcar.find(params[:id])
+    render 'cars/show'
+  end
+
   def create
     car = Car.find(params[:car_id])
     ownedcar = Ownedcar.create(
