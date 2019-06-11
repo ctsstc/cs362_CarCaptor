@@ -44,6 +44,19 @@ header nav {
 header ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+header ul li {
+  margin-right: 10px;
+}
+
+header ul li.logo {
+  background-color: #008CFE;
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
 }
 
 header .account {
