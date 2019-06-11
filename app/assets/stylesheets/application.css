@@ -14,10 +14,16 @@
  *= require_self
  */
 
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
  body {
    font-family: Verdana, Geneva, Tahoma, sans-serif;
    background-color: #2e2e2e;
    color: #008CFE;
+   margin-top: 0;
  }
 
 a {
@@ -63,6 +69,12 @@ header .account {
   display: flex;
   justify-content: space-evenly;
   width: 30%;
+}
+
+footer {
+  border-top: 1px solid #DDD;
+  margin-top: 16px;
+  padding-top: 16px;
 }
 
 table {
