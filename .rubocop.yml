@@ -1,0 +1,11 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - db/**/*
+    - config/**/*
+Rails:
+  Enabled: true
+Style/Documentation:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false

@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :ownedcars
   resources :garages
   resources :cars
+  get '/profile', to: 'profile#index'
+  get '/profile/add-car'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
