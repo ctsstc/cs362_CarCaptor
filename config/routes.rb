@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get '/profile', to: 'profile#index'
   get '/profile/add-car'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'users/:id/add' => 'users#add'
-  get 'garages/:id/add' => 'garages#add'
-  get '/challenge' => 'users#challenge'
+  get '/challenge' => 'profile#challenge'
   post '/challenge' => 'users#commence_challenge'
 end
