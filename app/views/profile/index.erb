@@ -4,7 +4,11 @@ email: <%= current_user.email %>
 garage capacity: <%= current_user.garage.capacity %>
 <br>
 
-<%= link_to 'Add a new car!', profile_add_car_url %>
+<h2>Actions</h2>
+<ul>
+  <li><%= link_to '➕ Add a new car!', profile_add_car_url %></li>
+  <li><%= link_to '✊ Challenge an opponent', profile_challenge_url %></li>
+</ul>
 
 <h2>Cars:</h2>
 <%= render partial: 'shared/car_table', locals: { cars: @owned_cars } %>
