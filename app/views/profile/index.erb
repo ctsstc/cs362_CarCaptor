@@ -7,12 +7,4 @@ garage capacity: <%= current_user.garage.capacity %>
 <%= link_to 'Add a new car!', profile_add_car_url %>
 
 <h2>Cars:</h2>
-<table>
-  <tbody>
-    <% Ownedcar.where(:user => current_user.id).each do |c| %>
-      <tr class="ownedcar-row" id="<%= dom_id(c) %>">
-        <td><%= c.info %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render partial: 'shared/car_table', locals: { cars: @owned_cars } %>

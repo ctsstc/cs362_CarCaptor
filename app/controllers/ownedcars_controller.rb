@@ -21,7 +21,8 @@ class OwnedcarsController < ApplicationController
       horsepower: car.horsepower,
       torque: car.torque,
       weight: car.weight,
-      user: current_user
+      user: current_user,
+      photo_url: car.photo_url
     )
     if ownedcar.save
       redirect_to profile_path(params[:user_id])

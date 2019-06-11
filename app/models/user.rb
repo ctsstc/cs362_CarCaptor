@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
   has_one :garage
+  has_many :ownedcars
   after_create :add_garage
 
   attr_writer :login
@@ -31,6 +32,6 @@ class User < ApplicationRecord
   private
 
   def add_garage
-    self.garage = Garage.new(user: self)
+    self.garage = Garage.new(user: self, capacity: 2)
   end
 end
