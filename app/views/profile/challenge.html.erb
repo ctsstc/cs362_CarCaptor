@@ -1,10 +1,9 @@
 <h1>Challenge A User</h1>
-<p>Crush their ego utterly.</p>
+<p>Crush their ego utterly <%= current_user.username %>.</p>
 
 <%= form_with url: profile_commence_challenge_path, local: true do |f|  %>
-  <%= f.select :first, @users.map { |u| u.username }, prompt: 'first user' %>
   <p>VERSUS<p>
-  <%= f.select :second, @users.map { |u| u.username }, prompt: 'second user' %>
+  <%= f.select :second, @users.map { |u| u.username }, prompt: 'Select a Challenger!' %>
   <br><br>
-  <%= f.submit %>
+  <%= f.submit, 'Fists Up' %>
 <% end %>

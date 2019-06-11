@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class ProfileController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :add_car]
+  before_action :authenticate_user!, only: [
+    :index,
+    :add_car,
+    :commence_challenge
+  ]
 
   def index
     @owned_cars = current_user.ownedcars
@@ -10,11 +14,11 @@ class ProfileController < ApplicationController
   def show; end
 
   def challenge
-    @users = User.all
+    @users = User.where.not(id: current_user.id)
   end
 
   def commence_challenge
-    @user_one = User.find_by(username: params[:first])
+    @user_one = current_user
     @user_two = User.find_by(username: params[:second])
   end
 
