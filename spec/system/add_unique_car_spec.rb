@@ -3,9 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe 'adding a unique car', type: :system do
+  let(:user) { create(:user) }
   let!(:photo_url) { 'http://insecure.photo/test-photo.jpg' }
 
-  it 'allows a car to be added to a new user' do
+  it 'allows a car to be added to a user' do
     visit new_car_path
     fill_in 'Year', with: '1999'
     fill_in 'Make', with: 'Ford'
@@ -16,18 +17,15 @@ RSpec.describe 'adding a unique car', type: :system do
     fill_in 'Weight', with: 3273
     fill_in 'Photo url', with: photo_url
     click_on('Create Car')
-    visit new_user_path
-    fill_in 'Username', with: 'Dalton'
-    fill_in 'Password', with: 'bigpass123'
-    fill_in 'Email', with: 'example@gmail.com'
-    click_on('Create User')
-    visit users_path
-    @user = User.find_by(username: 'Dalton')
-    visit user_path(@user)
-    click_link('addcarlink')
+
+    login_as(user)
+
+    visit profile_path
+    click_link('Add a new car!')
     select 'Ford', from: 'car_id'
     click_on('Create Ownedcar')
-    visit user_path(@user)
+
+    visit profile_path
     expect(page).to have_selector('#ownedcar_1', text: '1999 Ford')
   end
 end

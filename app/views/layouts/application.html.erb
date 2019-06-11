@@ -11,6 +11,10 @@
 
   <body>
     <%= render 'shared/header' %>
+    <div class='messages'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>

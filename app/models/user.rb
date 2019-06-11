@@ -5,12 +5,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :username, presence: :true, uniqueness: { case_sensitive: false }
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
   # Only allow letter, number, underscore and punctuation.
   # see: https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
-  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
+  validates :username, format: /\A[a-zA-Z0-9_\.]*\z/, multiline: false
 
-  has_one :garage
+  has_one :garage, dependent: :destroy
+  has_many :ownedcars, dependent: :destroy
   after_create :add_garage
 
   attr_writer :login
@@ -31,6 +32,6 @@ class User < ApplicationRecord
   private
 
   def add_garage
-    self.garage = Garage.new(user: self)
+    self.garage = Garage.new(user: self, capacity: 2)
   end
 end

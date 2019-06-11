@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <td>Photo</td>
+      <td>Year</td>
+      <td>Make</td>
+      <td>Model</td>
+      <td>Coolness Value</td>
+      <td>Horsepower</td>
+      <td>Torque</td>
+      <td>Weight</td>
+      <td>View Car</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% cars.each do |car| %>
+      <tr class="car-row" id="<%= dom_id(car) %>">
+        <td class="photo"><img src="<%= car.photo_url %>" style="max-width: 40px; max-height: 40px;"></td>
+        <td class="year"><%= car.year %></td>
+        <td class="make"><%= car.make %></td>
+        <td class="model"><%= car.model %></td>
+        <td class="coolness_value"><%= car.coolness_value %></td>
+        <td class="horsepower"><%= car.horsepower %></td>
+        <td class="torque"><%= car.torque %></td>
+        <td class="weight"><%= car.weight %></td>
+        <td><%= link_to "#{car.year} #{car.make} #{car.model}", car %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

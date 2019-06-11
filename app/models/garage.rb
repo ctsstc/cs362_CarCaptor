@@ -2,7 +2,7 @@
 
 class Garage < ApplicationRecord
   belongs_to :user
-  has_many :cars
+  has_many :cars, dependent: :destroy
 
   def total_coolness
     cars.sum(:coolness_value)

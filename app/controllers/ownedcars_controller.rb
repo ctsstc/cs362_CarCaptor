@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class OwnedcarsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def new
     @ownedcar = Ownedcar.new
   end
@@ -11,8 +13,6 @@ class OwnedcarsController < ApplicationController
 
   def create
     car = Car.find(params[:car_id])
-    user = User.find(params[:user_id])
-    # render :inline => "<%= @user.username %>"
     ownedcar = Ownedcar.create(
       year: car.year,
       make: car.make,
@@ -21,10 +21,11 @@ class OwnedcarsController < ApplicationController
       horsepower: car.horsepower,
       torque: car.torque,
       weight: car.weight,
-      user: user
+      user: current_user,
+      photo_url: car.photo_url
     )
     if ownedcar.save
-      redirect_to user_path(params[:user_id])
+      redirect_to profile_path(params[:user_id])
     else
       redirect_to ownedcars_path
     end

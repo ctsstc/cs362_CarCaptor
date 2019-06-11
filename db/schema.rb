@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_235351) do
+ActiveRecord::Schema.define(version: 2019_06_11_033118) do
 
   create_table "cars", force: :cascade do |t|
     t.integer "year"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_06_09_235351) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_url"
     t.index ["user_id"], name: "index_ownedcars_on_user_id"
   end
 

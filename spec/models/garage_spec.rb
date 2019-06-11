@@ -3,8 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Garage, type: :model do
-  let!(:user) { build(:user) }
-  let!(:car) { build(:car) }
+  let(:user) { build(:user) }
+  let(:car) { build(:car) }
+  let(:another_car) { build(:car) }
   subject { build(:garage, user: user) }
 
   describe 'empty garage' do
@@ -41,7 +42,6 @@ RSpec.describe Garage, type: :model do
 
   describe 'a garage at full capacity' do
     subject { build(:garage, capacity: 1) }
-    let(:another_car) { build(:car) }
 
     before do
       subject.add(car)
@@ -73,4 +73,22 @@ RSpec.describe Garage, type: :model do
     end
   end
 
+  describe 'multiple cars' do
+    subject { create(:garage, user: user) }
+
+    before do
+      subject.add(car)
+      subject.add(another_car)
+    end
+
+    it 'has a total coolness' do
+      expect(subject.total_coolness).to eq(2)
+    end
+
+    it 'updates total coolness when a car\'s coolness increases' do
+      expect do
+        car.update(coolness_value: 4)
+      end.to change { subject.total_coolness }.by(3)
+    end
+  end
 end
