@@ -1,17 +1,10 @@
 <h1>Challenge A User</h1>
 Crush their ego utterly.
 <br><br>
-<form method="POST" action="/challenge">
-  <select name="first">
-    <% @users.each do |user| %>
-      <option class="username"><%= user.username %></option>
-    <% end %>
-  </select>
-  VS
-  <select name="second">
-    <% @users.each do |user| %>
-      <option class="username"><%= user.username %></option>
-    <% end %>
-  </select>
-  <input type="submit" value="Submit">
-</form>
+<%= form_with url: '/challenge' do |f|  %>
+  <%= f.select :first, @users.map { |u| u.username }, prompt: 'first user' %>
+  <p>VERSUS<p>
+  <%= f.select :second, @users.map { |u| u.username }, prompt: 'second user' %>
+  <br><br>
+  <%= f.submit %>
+<% end %>
