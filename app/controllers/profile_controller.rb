@@ -1,17 +1,11 @@
 # frozen_string_literal: true
 
 class ProfileController < ApplicationController
-  before_action :authenticate_user!, only: [
-    :index,
-    :add_car,
-    :commence_challenge
-  ]
+  before_action :authenticate_user!
 
   def index
     @owned_cars = current_user.ownedcars
   end
-
-  def show; end
 
   def challenge
     @users = User.where.not(id: current_user.id)
