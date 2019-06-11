@@ -64,3 +64,15 @@ table, th, td {
 table .photo {
   text-align: center;
 }
+
+form table, form th, form td {
+  border: none;
+}
+
+form table .label {
+  text-align: right;
+}
+
+input[type=submit] {
+  cursor: pointer;
+}
