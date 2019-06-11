@@ -6,7 +6,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :username
       t.string :password
       t.string :email
-      t.references :garage, foreign_key: true
 
       t.timestamps
     end

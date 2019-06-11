@@ -9,5 +9,6 @@ class CreateGarages < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    add_reference :users, :garage, foreign_key: true
   end
 end
