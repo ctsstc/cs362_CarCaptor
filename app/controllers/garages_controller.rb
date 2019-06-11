@@ -1,5 +1,5 @@
 class GaragesController < ApplicationController
-  before_action :set_user, only: [:create]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def new
     @garage = Garage.new
@@ -12,18 +12,12 @@ class GaragesController < ApplicationController
   def create
     @garage = Garage.create(
       capacity: params[:garage][:capacity],
-      user: @user
+      user: current_user
     )
     if @garage.save
       redirect_to garages_path
     else
       render :new
     end
-  end
-
-  private
-
-  def set_user
-    @user = current_user
   end
 end
