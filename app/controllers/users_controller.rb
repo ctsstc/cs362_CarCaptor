@@ -24,8 +24,8 @@ class UsersController < ApplicationController
   end
 
   def commence_challenge
-    @user_one = User.find(params[:first])
-    @user_two = User.find(params[:second])
+    @user_one = User.find_by(username: params[:first])
+    @user_two = User.find_by(username: params[:second])
   end
 
   def create
