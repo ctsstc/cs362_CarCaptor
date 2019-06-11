@@ -10,7 +10,7 @@ class User < ApplicationRecord
   # see: https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   validates :username, format: /\A[a-zA-Z0-9_\.]*\z/, multiline: false
 
-  has_many :garage, dependent: :destroy
+  has_one :garage, dependent: :destroy
   has_many :ownedcars, dependent: :destroy
   after_create :add_garage
 
