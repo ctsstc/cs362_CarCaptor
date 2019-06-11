@@ -1,7 +1,7 @@
 <h1>Challenge A User</h1>
 Crush their ego utterly.
 <br><br>
-<%= form_with url: '/challenge' do |f|  %>
+<%= form_with url: '/challenge', local: true do |f|  %>
   <%= f.select :first, @users.map { |u| u.username }, prompt: 'first user' %>
   <p>VERSUS<p>
   <%= f.select :second, @users.map { |u| u.username }, prompt: 'second user' %>

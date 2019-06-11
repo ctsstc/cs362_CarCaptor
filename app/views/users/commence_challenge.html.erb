@@ -1,1 +1,15 @@
-Hallo?
+<h1><%= @user_one.username %> challenged <%= @user_two.username %> to a Car-off! Let's see who's coolest.</h1>
+<h3><%= @user_one.username %>'s garage has a total coolness of <%= @user_one.garage.total_coolness %>. Sick!</h3>
+<p>Let's get a breakdown:</p>
+<ul>
+  <%= @user_one.garage.cars.each do |car| %>
+    <li>Car: <%= "#{car.year} #{car.make} #{car.model}" %>, Coolness: <%= car.coolness_value %></li>
+  <% end %>
+</ul>
+<h3><%= @user_two.username %>'s garage has a total coolness of <%= @user_one.garage.total_coolness %>. Nice!</h3>
+<p>Let's get a breakdown:</p>
+<ul>
+  <%= @user_two.garage.cars.each do |car| %>
+    <li>Car: <%= "#{car.year} #{car.make} #{car.model}" %>, Coolness: <%= car.coolness_value %></li>
+  <% end %>
+</ul>
