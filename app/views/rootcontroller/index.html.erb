@@ -8,23 +8,17 @@
 <h2>Cars</h2>
 <ul>
   <li><%= link_to 'Look at thems ownedcars', ownedcars_path %></li>
-  <li><a href="/cars">look at thems cars</a></li>
-  <li><a href="/cars/new">Make one of thems cars</a></li>
+  <li><%= link_to 'Look at thems cars', cars_path %></li>
+  <li><%= link_to 'Make one of thems cars', new_car_path %></li>
 </ul>
 
 <h2>Garages</h2>
 <ul>
-  <li><a href="/garages">look at thems garages</a></li>
-  <li><a href="/garages/new">Make one of thems garage</a></li>
-</ul>
-
-<h2>Users</h2>
-<ul>
-  <li><a href="/users">look at thems users</a></li>
-  <li><%= link_to('Make one of thems users', new_user_registration_path) %></li>
+  <li><%= link_to 'Look at thems garages', garages_path %><a href="/garages">look at thems garages</a></li>
+  <li><%= link_to 'Make one of thems garage', new_garage_path %><a href="/garages/new">Make one of thems garage</a></li>
 </ul>
 
 <h2>Challenge</h2>
 <ul>
-  <li><a href="/challenge">Challenge another of thems users</a></li>
+  <li><%= link_to 'Challenge another of thems users', profile_challenge_path %></li>
 </ul>
