@@ -1,0 +1,12 @@
+    
+<h1>Add a new car to your garage</h1>
+
+<%= form_for(@new_ownedcar) do |f| %>
+  <select name="car_id">
+    <%= @cars.each do |c| %>
+      <option value="<%= c.id %>"><%= c.info %></option>
+    <% end %>
+  </select>
+  <br />
+  <%= f.submit %>
+<% end %>

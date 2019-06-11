@@ -1,0 +1,17 @@
+<h1>All Garages</h1>
+<table>
+  <thead>
+    <tr>
+      <td>Owner</td>
+      <td>Capacity</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @garages.each do |garage| %>
+      <tr class="garage-row" id="<%= dom_id(garage) %>">
+        <td class="capacity"><%= garage.user.username %></td>
+        <td class="capacity"><%= garage.capacity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -9,5 +9,6 @@ FactoryBot.define do
     horsepower { 20 }
     torque { 20 }
     weight { 6000 }
+    photo_url { 'http://insecure.photo/test-photo.jpg' }
   end
 end

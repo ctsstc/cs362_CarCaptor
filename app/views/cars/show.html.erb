@@ -1,0 +1,26 @@
+<h1>Car Id: <%= @car.id %></h1>
+<table>
+  <thead>
+    <tr>
+      <td>Year</td>
+      <td>Make</td>
+      <td>Model</td>
+      <td>Coolness Value</td>
+      <td>Horsepower</td>
+      <td>Torque</td>
+      <td>Weight</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="car-row" id="<%= dom_id(@car) %>">
+      <td class="year"><%= @car.year %></td>
+      <td class="make"><%= @car.make %></td>
+      <td class="model"><%= @car.model %></td>
+      <td class="coolness_value"><%= @car.coolness_value %></td>
+      <td class="horsepower"><%= @car.horsepower %></td>
+      <td class="torque"><%= @car.torque %></td>
+      <td class="weight"><%= @car.weight %></td>
+    </tr>
+  </tbody>
+</table>
+<img class='photo' style="max-width: 800px; max-height: 600px;" src="<%= @car.photo_url %>">

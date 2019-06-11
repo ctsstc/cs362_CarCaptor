@@ -1,0 +1,12 @@
+<h1><%= current_user.username %>'s Garage</h1>
+<p>Email: <span class='accent'><%= current_user.email %></span></p>
+<p>Garage Capacity: <span class='accent'><%= current_user.garage.capacity %></span></p>
+
+<h2>Actions</h2>
+<ul>
+  <li><%= link_to '➕ Add a new car!', profile_add_car_url %></li>
+  <li><%= link_to '✊ Challenge an opponent', profile_challenge_url %></li>
+</ul>
+
+<h2>Cars:</h2>
+<%= render partial: 'shared/car_table', locals: { cars: @owned_cars } %>

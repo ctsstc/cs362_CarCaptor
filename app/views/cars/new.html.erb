@@ -1,26 +1,50 @@
 <h1>New Car</h1>
 
+<% if @car.errors %>
+  <% @car.errors.messages.each do |error| %>
+  <p><strong>Errors</strong>: <%= error %></p>
+  <% end %>
+<% end %>
+
 <%= form_for(@car) do |f| %>
-  <%= f.label(:year) %>
-  <%= f.number_field(:year) %>
-  <br />
-  <%= f.label(:make) %>
-  <%= f.text_field(:make) %>
-  <br />
-  <%= f.label(:model) %>
-  <%= f.text_field(:model) %>
-  <br />
-  <%= f.label(:coolness_value) %>
-  <%= f.number_field(:coolness_value) %>
-  <br />
-  <%= f.label(:horsepower) %>
-  <%= f.number_field(:horsepower) %>
-  <br />
-  <%= f.label(:torque) %>
-  <%= f.number_field(:torque) %>
-  <br />
-  <%= f.label(:weight) %>
-  <%= f.number_field(:weight) %>
-  <br />
-  <%= f.submit %>
+  <table>
+    <tbody>
+      <tr>
+        <td class='label'><%= f.label(:year) %></td>
+        <td class='field'><%= f.number_field(:year) %></td>
+      </tr>
+      <tr>
+        <td class='label'><%= f.label(:make) %></td>
+        <td class='field'><%= f.text_field(:make) %></td>
+      </tr>
+      <tr>
+        <td class='label'><%= f.label(:model) %></td>
+        <td class='field'><%= f.text_field(:model) %></td>
+      </tr>
+      <tr>
+        <td class='label'><%= f.label(:coolness_value) %></td>
+        <td class='field'><%= f.number_field(:coolness_value) %></td>
+      </tr>
+      <tr>
+        <td class='label'><%= f.label(:horsepower) %></td>
+        <td class='field'><%= f.number_field(:horsepower) %></td>
+      </tr>
+      <tr>
+        <td class='label'><%= f.label(:torque) %></td>
+        <td class='field'><%= f.number_field(:torque) %></td>
+      </tr>
+      <tr>
+        <td class='label'><%= f.label(:weight) %></td>
+        <td class='field'><%= f.number_field(:weight) %></td>
+      </tr>
+      <tr>
+        <td class='label'><%= f.label(:photo_url) %></td>
+        <td class='field'><%= f.text_field(:photo_url) %></td>
+      </tr>
+      <tr>
+        <td class='label'></td>
+        <td class='field'><%= f.submit %></td>
+      </tr>
+    </tbody>
+  </table>
 <% end %>

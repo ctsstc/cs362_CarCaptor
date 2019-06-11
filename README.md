@@ -1,12 +1,14 @@
 # Car Captor
 
-| Travis CI | CC Grade | CC Test Coverage |
-|---|---|---|
-| [![Build Status](https://travis-ci.org/ctsstc/Car-Captor.svg?branch=develop)](https://travis-ci.org/ctsstc/Car-Captor) | [![Maintainability](https://api.codeclimate.com/v1/badges/a8ff100e58731888f6e2/maintainability)](https://codeclimate.com/github/ctsstc/Car-Captor/maintainability) | [![Test Coverage](https://api.codeclimate.com/v1/badges/a8ff100e58731888f6e2/test_coverage)](https://codeclimate.com/github/ctsstc/Car-Captor/test_coverage) |
+| Travis CI | CC Grade | CC Test Coverage | CodeCov |
+|---|---|---|---|
+| [![Build Status](https://travis-ci.org/ctsstc/Car-Captor.svg?branch=develop)](https://travis-ci.org/ctsstc/Car-Captor) | [![Maintainability](https://api.codeclimate.com/v1/badges/a8ff100e58731888f6e2/maintainability)](https://codeclimate.com/github/ctsstc/Car-Captor/maintainability) | [![Test Coverage](https://api.codeclimate.com/v1/badges/a8ff100e58731888f6e2/test_coverage)](https://codeclimate.com/github/ctsstc/Car-Captor/test_coverage) | [![codecov](https://codecov.io/gh/ctsstc/Car-Captor/branch/develop/graph/badge.svg)](https://codecov.io/gh/ctsstc/Car-Captor) |
 
 ## What?!
 
 Build your very own garage and collect all the rarest cars! only he who controls the coolest car will be crowned DRIFT KING!
+
+<https://car-captor.herokuapp.com/>
 
 ## Installation
 
@@ -40,6 +42,16 @@ If you would like to have tests auto run while working on code run the following
 ```shell
 guard
 ```
+
+## Troubleshoot
+
+You may need to install the following on Linux for the PG build to work when using `bundle`.
+
+```shell
+sudo apt-get install libpq-dev
+```
+
+> <https://stackoverflow.com/questions/6040583/cant-find-the-libpq-fe-h-header-when-trying-to-install-pg-gem>
 
 ## Contributors
 

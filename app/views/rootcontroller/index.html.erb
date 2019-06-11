@@ -1,6 +1,24 @@
 <h1>Routes For Your Eyeballs</h1>
-<p><a href="/ownedcars">look at thems ownedcars</a></p>
-<p><a href="/garages">look at thems garages</a></p>
-<p><a href="/users">look at thems users</a></p>
-<p><a href="/users/new">Make thems user</a></p>
-<p><a href="/cars">look at thems cars</a></p>
+
+<h2>Profile</h2>
+<ul>
+  <li><%= link_to 'View your profile', profile_path %></li>
+</ul>
+
+<h2>Cars</h2>
+<ul>
+  <li><%= link_to 'Look at thems ownedcars', ownedcars_path %></li>
+  <li><%= link_to 'Look at thems cars', cars_path %></li>
+  <li><%= link_to 'Make one of thems cars', new_car_path %></li>
+</ul>
+
+<h2>Garages</h2>
+<ul>
+  <li><%= link_to 'Look at thems garages', garages_path %></li>
+  <li><%= link_to 'Make one of thems garage', new_garage_path %></li>
+</ul>
+
+<h2>Challenge</h2>
+<ul>
+  <li><%= link_to 'Challenge another of thems users', profile_challenge_path %></li>
+</ul>

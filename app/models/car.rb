@@ -2,6 +2,7 @@
 
 class Car < ApplicationRecord
   validates :year, presence: true, numericality: { only_integer: true }
+  validates :photo_url, format: URI::regexp(%w[http https])
 
   def calculate_power_to_weight_ratio
     horsepower.fdiv(weight)
