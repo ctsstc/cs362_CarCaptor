@@ -41,6 +41,16 @@ If you would like to have tests auto run while working on code run the following
 guard
 ```
 
+## Troubleshoot
+
+You may need to install the following on Linux for the PG build to work when using `bundle`.
+
+```shell
+sudo apt-get install libpq-dev
+```
+
+> <https://stackoverflow.com/questions/6040583/cant-find-the-libpq-fe-h-header-when-trying-to-install-pg-gem>
+
 ## Contributors
 
 - Dalton Moehnke
