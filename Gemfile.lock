@@ -93,7 +93,7 @@ GEM
     dotenv-rails (2.7.2)
       dotenv (= 2.7.2)
       railties (>= 3.2, < 6.1)
-    duktape (2.0.1.0)
+    duktape (2.3.0.0)
     erubi (1.8.0)
     execjs (2.7.0)
     factory_bot (5.0.2)
