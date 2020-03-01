@@ -157,7 +157,7 @@ GEM
     pry-nav (0.3.0)
       pry (>= 0.9.10, < 0.13.0)
     public_suffix (4.0.1)
-    puma (4.2.1)
+    puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.0.7)
     rack-test (1.1.0)
@@ -295,7 +295,7 @@ DEPENDENCIES
   pg
   pry
   pry-nav
-  puma (~> 4.2)
+  puma (~> 4.3)
   rails (~> 5.2.3)
   rake
   rspec-rails (~> 3.9.0)
